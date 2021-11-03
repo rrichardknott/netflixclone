@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+#main-section {
+  background-image: url("/img/background.jpg");
+  background-size: cover; /* resizes the image to cover the entire container*/
+  background-position: center;
+  height: 100vh; /*stands for viewport height: think of this as 100 slices of your screen*/
+  display: flex; /*this sets how an item will grow or shrink to fit the space available in its flex container.*/
+  flex-direction: column; /*by default this is row (horizontal), but you can make things align vertically by column*/
+  justify-content: center; /*will try and align items in the center vertically*/
+  align-items: center; /*will try and align items in the center horizontally*/
+  text-align: center; /*similar to justify content but works within other elements: buttons*/
+  padding: 0 20px;
+}
+
+#netlflix-logo {
+  max-width: 65%;
+  height: auto;
+}
+
+#main-section h1 {
+  font-size: 50px;
+}
+
+#button-container {
+  display: flex;
+}
+
+#watch-now,
+#sign-up {
+  font-size: 18px;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: 150px;
+  margin-top: 25px;
+  background-color: red;
+  color: #fff;
+}
+
+#watch-now {
+  margin-right: 10px;
+}
+
+#sign-up {
+  margin-left: 10px;
+}
+
+#watch-now:hover,
+#sign-up:hover {
+  animation-name: change_color;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes change_color {
+  100% {
+    background-color: #fff;
+    color: red;
+    font-weight: bold;
+  }
+}
+
+/* Modal Start */
+#modal-heading,
+#modal1-heading {
+  color: red;
+  font-weight: bold;
+}
+/* Modal End */
+
+@media screen and (max-width: 500px) {
+  #netlflix-logo {
+    width: 250px;
+  }
+  #main-section h1 {
+    font-size: 32px;
+  }
+  #watch-now,
+  #sign-up {
+    font-size: 14px;
+    padding: 10px 18px;
+    width: 125px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #button-container {
+    flex-direction: column;
+  }
+  #watch-now,
+  #sign-up {
+    margin: 10px 0;
+  }
+}
